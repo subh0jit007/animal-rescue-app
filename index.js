@@ -1,3 +1,18 @@
+const mongoose = require('mongoose');
+
+// mongoDB connection string
+const dbURL = 'mongodb+srv://subhajit_007:1XQGkyv9Kh8cakRV@cluster0.1vslg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
+//Connect to MongoDB
+mongoose.connect(dbURL, { useNewUrlParser : true,
+    useUnifiedTopology : true })
+    .then(()=>{
+        console.log('Connected to MongoDB');
+    })
+    .catch((err)=>{
+        console.log('MongoDB connection error: ', err);
+    });
+
 //bring express
 const express = require('express');
 //run express
